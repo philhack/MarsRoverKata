@@ -24,3 +24,6 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.stresult
 *.DotSettings
+packages*/
+*.exe
+!NuGet.exe
