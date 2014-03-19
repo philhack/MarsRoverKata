@@ -1,7 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 
-namespace MarsRoverKata.Tests.Acceptance {
+namespace MarsRover.Tests.Acceptance {
     [Binding]
     public class MoveRoverSteps {
         [Given(@"The rover is located at ""(.*)""")]
