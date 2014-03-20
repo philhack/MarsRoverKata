@@ -5,7 +5,7 @@ namespace MarsRover.Domain {
         public void ExecuteCommands(string commands) {}
 
         public string CurrentLocation() {
-            return "1,0,N";
+            return "0,1,N";
         }
     }
 }

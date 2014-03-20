@@ -22,8 +22,8 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
 
         [Test]
-        public void Then_the_robots_position_is_now_at_1_0_N() {
-            var expected = "1,0,N";
+        public void Then_the_robots_position_is_now_at_0_1_N() {
+            var expected = "0,1,N";
 
             Assert.AreEqual(expected, Rover.CurrentLocation());
         }
