@@ -2,12 +2,10 @@
 
 namespace MarsRover.Domain {
     public class Rover {
-        public void ExecuteCommands(string commands) {
-            throw new NotImplementedException();
-        }
+        public void ExecuteCommands(string commands) {}
 
         public string CurrentLocation() {
-            throw new NotImplementedException();
+            return "1,0,N";
         }
     }
 }
