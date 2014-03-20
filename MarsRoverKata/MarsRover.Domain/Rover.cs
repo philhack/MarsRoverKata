@@ -4,6 +4,10 @@ namespace MarsRover.Domain {
     public class Rover {
         private string _currentLocation;
 
+        public Rover() {
+            _currentLocation = "0,0,N";
+        }
+
         public void ExecuteCommands(string commands) {
             switch (commands) {
                 case "F":
