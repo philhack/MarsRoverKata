@@ -2,10 +2,14 @@
 
 namespace MarsRover.Domain {
     public class Rover {
-        public void ExecuteCommands(string commands) {}
+        private string _currentLocation;
+
+        public void ExecuteCommands(string commands) {
+            _currentLocation = commands == "F" ? "0,1,N" : "0,0,N";
+        }
 
         public string CurrentLocation() {
-            return "0,1,N";
+            return _currentLocation;
         }
     }
 }
