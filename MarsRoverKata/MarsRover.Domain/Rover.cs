@@ -5,7 +5,17 @@ namespace MarsRover.Domain {
         private string _currentLocation;
 
         public void ExecuteCommands(string commands) {
-            _currentLocation = commands == "F" ? "0,1,N" : "0,0,N";
+            switch (commands) {
+                case "F":
+                    _currentLocation = "0,1,N";
+                    break;
+                case "FF":
+                    _currentLocation = "0,2,N";
+                    break;
+                default:
+                    _currentLocation = "0,0,N";
+                    break;
+            }
         }
 
         public string CurrentLocation() {
