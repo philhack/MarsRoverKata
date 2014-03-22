@@ -10,7 +10,7 @@ using NUnit.Framework;
 
 namespace MarsRover.Tests.Unit {
     [TestFixture]
-    public class Command_Tests {
+    public class CommandTests {
         IRover _rover;
 
         [SetUp]

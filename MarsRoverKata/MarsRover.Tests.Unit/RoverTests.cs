@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 namespace MarsRover.Tests.Unit {
     [TestFixture]
-    public class Rover_Tests {
+    public class RoverTests {
         [Test]
         public void Rover_implements_the_interface_IRover() {
             var rover = new Rover();
