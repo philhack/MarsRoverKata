@@ -14,20 +14,6 @@ namespace MarsRover.Domain {
             _direction = "N";
         }
 
-        public void ExecuteCommands(string commands) {
-            switch (commands) {
-                case "F":
-                    _yCoordinate += 1;
-                    break;
-                case "FF":
-                    _yCoordinate += 2;
-                    break;
-                case "FFB":
-                    _yCoordinate += 1;
-                    break;
-            }
-        }
-
         public string CurrentLocation() {
             return String.Format("{0},{1},{2}", _xCoordinate, _yCoordinate, _direction);
         }
