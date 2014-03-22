@@ -14,5 +14,11 @@ namespace MarsRover.Tests.Unit {
             var moveForwardCommand = new MoveForwardCommand();
             Assert.IsInstanceOf<ICommand>(moveForwardCommand);
         }
+
+        [Test]
+        public void MoveBackwardCommand_is_an_instance_of_ICommand() {
+            var moveBackwardCommand = new MoveBackwardCommand();
+            Assert.IsInstanceOf<ICommand>(moveBackwardCommand);
+        }
     }
 }
