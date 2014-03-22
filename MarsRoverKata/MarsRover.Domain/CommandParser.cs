@@ -1,8 +1,8 @@
-using System;
 using System.Collections.Generic;
+using MarsRover.Domain.Commands;
 using MarsRover.Domain.Interfaces;
 
-namespace MarsRover.Domain.Commands {
+namespace MarsRover.Domain {
     public class CommandParser : ICommandParser {
         private readonly IRover _rover;
 

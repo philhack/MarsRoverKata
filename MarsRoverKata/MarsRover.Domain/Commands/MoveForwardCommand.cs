@@ -2,7 +2,7 @@
 
 namespace MarsRover.Domain.Commands {
     public class MoveForwardCommand : IRoverCommand {
-        private IRover _rover;
+        private readonly IRover _rover;
 
         public MoveForwardCommand(IRover rover) {
             _rover = rover;
