@@ -41,8 +41,8 @@
   <ItemGroup>
     <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="Commands\IRoverCommand.cs" />
-    <Compile Include="Commands\MoveBackwardRoverCommand.cs" />
-    <Compile Include="Commands\MoveForwardRoverCommand.cs" />
+    <Compile Include="Commands\MoveBackwardCommand.cs" />
+    <Compile Include="Commands\MoveForwardCommand.cs" />
     <Compile Include="Interfaces\ICommandParser.cs" />
     <Compile Include="Interfaces\IRover.cs" />
     <Compile Include="Interfaces\IRoverClient.cs" />

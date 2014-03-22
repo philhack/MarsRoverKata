@@ -20,13 +20,13 @@ namespace MarsRover.Tests.Unit {
 
         [Test]
         public void MoveForwardCommand_is_an_instance_of_IRoverCommand() {
-            var moveForwardCommand = new MoveForwardRoverCommand(_rover);
+            var moveForwardCommand = new MoveForwardCommand(_rover);
             Assert.IsInstanceOf<IRoverCommand>(moveForwardCommand);
         }
 
         [Test]
         public void MoveBackwardCommand_is_an_instance_of_IRoverCommand() {
-            var moveBackwardCommand = new MoveBackwardRoverCommand(_rover);
+            var moveBackwardCommand = new MoveBackwardCommand(_rover);
             Assert.IsInstanceOf<IRoverCommand>(moveBackwardCommand);
         }
     }

@@ -1,15 +1,15 @@
 ﻿using MarsRover.Domain.Interfaces;
 
 namespace MarsRover.Domain.Commands {
-    public class MoveForwardRoverCommand : IRoverCommand {
+    public class MoveBackwardCommand : IRoverCommand {
         private IRover _rover;
 
-        public MoveForwardRoverCommand(IRover rover) {
+        public MoveBackwardCommand(IRover rover) {
             _rover = rover;
         }
 
         public void Execute() {
-            _rover.MoveForward();
+            _rover.MoveBackward();
         }
     }
 }
