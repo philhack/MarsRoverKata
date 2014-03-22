@@ -79,4 +79,17 @@ namespace Given_a_rover_at_coordinates_0_0_N {
             Assert.AreEqual(expected, Rover.CurrentLocation());
         }
     }
+
+    public class When_the_commands_FFB_are_given : Given_a_rover_at_coordinates_0_0_N {
+        [SetUp]
+        public void When() {
+            Rover.ExecuteCommands("FFB");
+        }
+
+        [Test]
+        public void Then_the_robots_position_is_now_at_0_1_N() {
+            var expected = "0,1,N";
+            Assert.AreEqual(expected, Rover.CurrentLocation());
+        }
+    }
 }
