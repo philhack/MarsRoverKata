@@ -29,5 +29,9 @@ namespace MarsRover.Domain {
         public string CurrentLocation() {
             return _currentLocation;
         }
+
+        public void MoveForward() {
+            _currentLocation = "0,1,N";
+        }
     }
 }

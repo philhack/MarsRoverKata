@@ -39,13 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandParser.cs" />
     <Compile Include="Commands\IRoverCommand.cs" />
     <Compile Include="Commands\MoveBackwardRoverCommand.cs" />
     <Compile Include="Commands\MoveForwardRoverCommand.cs" />
+    <Compile Include="Interfaces\ICommandParser.cs" />
     <Compile Include="Interfaces\IRover.cs" />
+    <Compile Include="Interfaces\IRoverClient.cs" />
     <Compile Include="Interfaces\IRoverInvoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rover.cs" />
+    <Compile Include="RoverClient.cs" />
     <Compile Include="RoverInvoker.cs" />
   </ItemGroup>
   <ItemGroup />

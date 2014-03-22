@@ -10,10 +10,14 @@ using NUnit.Framework;
 namespace Given_a_rover_at_coordinates_0_0_N {
     public class Given_a_rover_at_coordinates_0_0_N {
         protected IRover Rover;
+        protected IRoverInvoker RoverInvoker;
+        protected IRoverClient RoverClient;
 
         [SetUp]
         public void Given() {
             Rover = new Rover();
+            RoverInvoker = new RoverInvoker();
+            RoverClient = new RoverClient(Rover, RoverInvoker);
         }
     }
 
@@ -28,8 +32,9 @@ namespace Given_a_rover_at_coordinates_0_0_N {
 
     public class When_the_command_F_is_given : Given_a_rover_at_coordinates_0_0_N {
         [SetUp]
-        public void When() {
-            Rover.ExecuteCommands("F");
+        public void When() {            
+            RoverClient.GiveCommands("F");
+            RoverInvoker.Execute();
         }
 
         [Test]
@@ -39,6 +44,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
             Assert.AreEqual(expected, Rover.CurrentLocation());
         }
     }
+
 
     public class When_the_commands_FF_are_given : Given_a_rover_at_coordinates_0_0_N {
         [SetUp]
