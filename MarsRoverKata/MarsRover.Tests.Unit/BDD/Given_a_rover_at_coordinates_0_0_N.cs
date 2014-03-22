@@ -93,7 +93,8 @@ namespace Given_a_rover_at_coordinates_0_0_N {
     public class When_the_commands_BB_are_given : Given_a_rover_at_coordinates_0_0_N {
         [SetUp]
         public void When() {
-            Rover.ExecuteCommands("BB");
+            RoverClient.GiveCommands("BB");
+            RoverInvoker.Execute();
         }
 
         [Test]
