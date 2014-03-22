@@ -35,5 +35,13 @@ namespace MarsRover.Domain {
         public void MoveForward() {
             _yCoordinate += 1;
         }
+
+        public void MoveBackward() {
+            _yCoordinate = MoveRoverBackwardsUnlessItCanNotMoveBackwards();
+        }
+
+        private int MoveRoverBackwardsUnlessItCanNotMoveBackwards() {
+            return _yCoordinate >= 1 ? (_yCoordinate - 1) : 0;
+        }
     }
 }

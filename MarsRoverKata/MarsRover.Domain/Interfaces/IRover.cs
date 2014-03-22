@@ -3,5 +3,6 @@
         void ExecuteCommands(string commands);
         string CurrentLocation();
         void MoveForward();
+        void MoveBackward();
     }
 }

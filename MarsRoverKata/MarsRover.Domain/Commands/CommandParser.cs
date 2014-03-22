@@ -30,7 +30,8 @@ namespace MarsRover.Domain.Commands {
 
         private Dictionary<string, IRoverCommand> GetAvailableRoverMovementCommands() {
             return new Dictionary<string, IRoverCommand> {
-                {"F", new MoveForwardRoverCommand(_rover)}
+                {"F", new MoveForwardRoverCommand(_rover)},
+                {"B", new MoveBackwardRoverCommand(_rover)}
             };
         }
     }
