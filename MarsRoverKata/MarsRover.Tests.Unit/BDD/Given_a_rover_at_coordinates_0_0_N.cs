@@ -3,11 +3,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MarsRover.Domain;
+using MarsRover.Domain.Commands;
+using MarsRover.Domain.Interfaces;
 using NUnit.Framework;
 
 namespace Given_a_rover_at_coordinates_0_0_N {
     public class Given_a_rover_at_coordinates_0_0_N {
-        protected Rover Rover;
+        protected IRover Rover;
 
         [SetUp]
         public void Given() {
