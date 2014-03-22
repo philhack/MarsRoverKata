@@ -1,4 +1,4 @@
 ﻿namespace MarsRover.Domain.Commands {
-    public interface ICommand {
+    public interface IRoverCommand {
     }
 }
