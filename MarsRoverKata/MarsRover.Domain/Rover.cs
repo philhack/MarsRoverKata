@@ -16,6 +16,9 @@ namespace MarsRover.Domain {
                 case "FF":
                     _currentLocation = "0,2,N";
                     break;
+                case "FFB":
+                    _currentLocation = "0,1,N";
+                    break;
                 default:
                     _currentLocation = "0,0,N";
                     break;
