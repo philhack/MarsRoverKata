@@ -7,11 +7,9 @@ using MarsRover.Domain;
 using MarsRover.Domain.Interfaces;
 using NUnit.Framework;
 
-namespace MarsRover.Tests.Unit
-{
+namespace MarsRover.Tests.Unit {
     [TestFixture]
-    public class Rover_Tests
-    {
+    public class Rover_Tests {
         [Test]
         public void Rover_implements_the_interface_IRover() {
             var rover = new Rover();
