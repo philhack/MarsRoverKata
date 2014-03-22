@@ -30,9 +30,23 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
+    public class When_an_empty_command_is_given : Given_a_rover_at_coordinates_0_0_N {
+        [SetUp]
+        public void When() {
+            RoverClient.GiveCommands("");
+        }
+
+        [Test]
+        public void Then_the_robots_position_is_at_0_0_N() {
+            var expected = "0,0,N";
+
+            Assert.AreEqual(expected, Rover.CurrentLocation());
+        }
+    }
+
     public class When_the_command_F_is_given : Given_a_rover_at_coordinates_0_0_N {
         [SetUp]
-        public void When() {            
+        public void When() {
             RoverClient.GiveCommands("F");
             RoverInvoker.Execute();
         }
