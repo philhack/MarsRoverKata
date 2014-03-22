@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command_Tests.cs" />
     <Compile Include="Given_a_rover_at_coordinates_0_0_N.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
