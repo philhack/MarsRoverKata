@@ -47,6 +47,7 @@
     <Compile Include="Command_Tests.cs" />
     <Compile Include="BDD\Given_a_rover_at_coordinates_0_0_N.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoverInvokerTests.cs" />
     <Compile Include="Rover_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
