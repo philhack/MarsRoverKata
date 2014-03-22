@@ -4,34 +4,36 @@ using MarsRover.Domain.Interfaces;
 namespace MarsRover.Domain {
     public class Rover : IRover {
         private string _currentLocation;
+        private int _yCoordinate;
+        private int _xCoordinate;
+        private string _direction;
 
         public Rover() {
-            _currentLocation = "0,0,N";
+            _xCoordinate = 0;
+            _yCoordinate = 0;
+            _direction = "N";
         }
 
         public void ExecuteCommands(string commands) {
             switch (commands) {
                 case "F":
-                    _currentLocation = "0,1,N";
+                    _yCoordinate += 1;
                     break;
                 case "FF":
-                    _currentLocation = "0,2,N";
+                    _yCoordinate += 2;
                     break;
                 case "FFB":
-                    _currentLocation = "0,1,N";
-                    break;
-                default:
-                    _currentLocation = "0,0,N";
+                    _yCoordinate += 1;
                     break;
             }
         }
 
         public string CurrentLocation() {
-            return _currentLocation;
+            return String.Format("{0},{1},{2}", _xCoordinate, _yCoordinate, _direction);
         }
 
         public void MoveForward() {
-            _currentLocation = "0,1,N";
+            _yCoordinate += 1;
         }
     }
 }

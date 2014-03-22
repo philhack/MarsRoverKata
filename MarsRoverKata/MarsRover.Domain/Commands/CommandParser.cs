@@ -11,10 +11,27 @@ namespace MarsRover.Domain.Commands {
         }
 
         public IList<IRoverCommand> ParseCommands(string roverCommands) {
-            IList<IRoverCommand> concreteRoverCommands = new List<IRoverCommand>();
-            if(roverCommands.StartsWith("F"))
-                concreteRoverCommands.Add(new MoveForwardRoverCommand(_rover));
+            var concreteRoverCommands = new List<IRoverCommand>();
+            ParseCommandsAndAddThemToTheListOfCommands(roverCommands, concreteRoverCommands);
             return concreteRoverCommands;
+        }
+
+        private void ParseCommandsAndAddThemToTheListOfCommands(string roverCommands, ICollection<IRoverCommand> concreteRoverCommands) {
+            for (var i = 0; i < roverCommands.Length; i++) {
+                var command = ParseCommand(roverCommands[i].ToString());
+                concreteRoverCommands.Add(command);
+            }
+        }
+
+        private IRoverCommand ParseCommand(string singleRoverCommand) {
+            var availableCommands = GetAvailableRoverMovementCommands();
+            return availableCommands[singleRoverCommand];
+        }
+
+        private Dictionary<string, IRoverCommand> GetAvailableRoverMovementCommands() {
+            return new Dictionary<string, IRoverCommand> {
+                {"F", new MoveForwardRoverCommand(_rover)}
+            };
         }
     }
 }
