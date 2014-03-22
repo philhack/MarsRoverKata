@@ -1,4 +1,4 @@
 ﻿namespace MarsRover.Domain.Commands {
-    public class MoveForwardCommand {
+    public class MoveForwardCommand : ICommand {
     }
 }
