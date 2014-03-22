@@ -1,7 +1,8 @@
 ﻿using System;
+using MarsRover.Domain.Interfaces;
 
 namespace MarsRover.Domain {
-    public class Rover {
+    public class Rover : IRover {
         private string _currentLocation;
 
         public Rover() {
