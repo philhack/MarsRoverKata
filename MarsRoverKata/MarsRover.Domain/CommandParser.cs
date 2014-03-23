@@ -1,13 +1,18 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using MarsRover.Domain.Commands;
 using MarsRover.Domain.Interfaces;
 
 namespace MarsRover.Domain {
     public class CommandParser : ICommandParser {
         private readonly IRover _rover;
+        private Dictionary<string, IRoverCommand> _availableCommands;
 
         public CommandParser(IRover rover) {
             _rover = rover;
+            LoadRoverCommands();
         }
 
         public IList<IRoverCommand> ParseCommands(string roverCommands) {
@@ -16,7 +21,8 @@ namespace MarsRover.Domain {
             return concreteRoverCommands;
         }
 
-        private void ParseCommandsAndAddThemToTheListOfCommands(string roverCommands, ICollection<IRoverCommand> concreteRoverCommands) {
+        private void ParseCommandsAndAddThemToTheListOfCommands(string roverCommands,
+                                                                ICollection<IRoverCommand> concreteRoverCommands) {
             for (var i = 0; i < roverCommands.Length; i++) {
                 var command = ParseCommand(roverCommands[i].ToString());
                 concreteRoverCommands.Add(command);
@@ -24,17 +30,20 @@ namespace MarsRover.Domain {
         }
 
         private IRoverCommand ParseCommand(string singleRoverCommand) {
-            var availableCommands = GetAvailableRoverMovementCommands();
-            return availableCommands[singleRoverCommand];
+            return _availableCommands[singleRoverCommand];
         }
 
-        private Dictionary<string, IRoverCommand> GetAvailableRoverMovementCommands() {
-            return new Dictionary<string, IRoverCommand> {
-                {"F", new MoveForwardCommand(_rover)},
-                {"B", new MoveBackwardCommand(_rover)},
-                {"R", new TurnRightCommand(_rover)},
-                {"L", new TurnLeftCommand(_rover)}
-            };
+        private void LoadRoverCommands() {
+            _availableCommands = new Dictionary<string, IRoverCommand>();
+            var commands =
+                Assembly.GetExecutingAssembly()
+                        .GetTypes()
+                        .Where(t => t.Namespace.Contains("MarsRover.Domain.Commands"));
+
+            foreach (var command in commands) {
+                var commandInstance = Activator.CreateInstance(command, _rover) as IRoverCommand;
+                _availableCommands.Add(command.Name[4].ToString(), commandInstance);
+            }
         }
     }
 }
