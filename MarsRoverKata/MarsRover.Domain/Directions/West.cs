@@ -19,7 +19,7 @@ namespace MarsRover.Domain.Directions {
         }
 
         public void MoveBackward() {
-            throw new NotImplementedException();
+            PlanetSurface.MoveXCoordinateForward();
         }
 
         public override string ToString() {
