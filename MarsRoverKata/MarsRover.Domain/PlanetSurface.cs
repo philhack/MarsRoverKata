@@ -4,7 +4,7 @@ namespace MarsRover.Domain {
     public class PlanetSurface : IPlanetSurface {
         private int _xCoordinate;
         private int _yCoordinate;
-        private int _gridSize;
+        private readonly int _gridSize;
 
         public PlanetSurface(int gridSize) {
             _gridSize = gridSize;
@@ -29,7 +29,7 @@ namespace MarsRover.Domain {
         }
 
         public string GridSize() {
-            throw new System.NotImplementedException();
+            return string.Format("{0}x{1}", _gridSize, _gridSize);
         }
 
         public void MoveYCoordinateForward() {
