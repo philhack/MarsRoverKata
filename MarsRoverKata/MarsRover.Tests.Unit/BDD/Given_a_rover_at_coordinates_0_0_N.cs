@@ -148,4 +148,19 @@ namespace Given_a_rover_at_coordinates_0_0_N {
             Assert.AreEqual(expected, Rover.CurrentLocation());
         }
     }
+
+    public class When_the_command_RR_is_given : Given_a_rover_at_coordinates_0_0_N {
+        [SetUp]
+        public void When() {
+            RoverClient.GiveCommands("RR");
+            RoverInvoker.Execute();
+        }
+
+        [Test]
+        public void Then_the_rover_current_location_is_0_0_S() {
+            var expected = "0,0,S";
+
+            Assert.AreEqual(expected, Rover.CurrentLocation());
+        }
+    }
 }
