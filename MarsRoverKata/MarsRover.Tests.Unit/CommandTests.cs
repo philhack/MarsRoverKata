@@ -15,7 +15,8 @@ namespace MarsRover.Tests.Unit {
 
         [SetUp]
         public void SetUp() {
-            _rover = new Rover();
+            var planetSurface = new PlanetSurface();
+            _rover = new Rover(planetSurface);
         }
 
         [Test]
