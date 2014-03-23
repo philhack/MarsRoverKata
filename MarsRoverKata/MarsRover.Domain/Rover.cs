@@ -1,4 +1,5 @@
 ﻿using System;
+using MarsRover.Domain.Directions;
 using MarsRover.Domain.Interfaces;
 
 namespace MarsRover.Domain {
@@ -6,16 +7,16 @@ namespace MarsRover.Domain {
         private string _currentLocation;
         private int _yCoordinate;
         private int _xCoordinate;
-        private string _direction;
+        private IDirection _direction;
 
         public Rover() {
             _xCoordinate = 0;
             _yCoordinate = 0;
-            _direction = "N";
+            _direction = new North();
         }
 
         public string CurrentLocation() {
-            return String.Format("{0},{1},{2}", _xCoordinate, _yCoordinate, _direction);
+            return String.Format("{0},{1},{2}", _xCoordinate, _yCoordinate, _direction.ToString());
         }
 
         public void MoveForward() {
@@ -27,11 +28,11 @@ namespace MarsRover.Domain {
         }
 
         public void TurnRight() {
-            _direction = "E";
+            _direction = _direction.TurnRight();
         }
 
         public void TurnLeft() {
-            _direction = "W";
+            _direction = _direction.TurnLeft();
         }
 
         private int MoveRoverBackwardsUnlessItCanNotMoveBackwards() {

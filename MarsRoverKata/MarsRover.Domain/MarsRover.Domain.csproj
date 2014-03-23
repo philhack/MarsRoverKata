@@ -44,7 +44,12 @@
     <Compile Include="Commands\MoveForwardCommand.cs" />
     <Compile Include="Commands\TurnLeftCommand.cs" />
     <Compile Include="Commands\TurnRightCommand.cs" />
+    <Compile Include="Directions\East.cs" />
+    <Compile Include="Directions\North.cs" />
+    <Compile Include="Directions\South.cs" />
+    <Compile Include="Directions\West.cs" />
     <Compile Include="Interfaces\ICommandParser.cs" />
+    <Compile Include="Interfaces\IDirection.cs" />
     <Compile Include="Interfaces\IRover.cs" />
     <Compile Include="Interfaces\IRoverClient.cs" />
     <Compile Include="Interfaces\IRoverCommand.cs" />
