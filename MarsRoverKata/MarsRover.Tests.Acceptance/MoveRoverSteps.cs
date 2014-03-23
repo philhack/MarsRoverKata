@@ -7,10 +7,10 @@ using TechTalk.SpecFlow;
 namespace MarsRover.Tests.Acceptance {
     [Binding]
     public class MoveRoverSteps {
+        private IPlanetSurface _planetSurface;
         private IRover _rover;
         private IRoverInvoker _roverInvoker;
         private IRoverClient _roverClient;
-        private IPlanetSurface _planetSurface;
 
         [Given(@"The rover is located at ""(.*)""")]
         public void GivenTheRoverIsLocatedAt(string p0) {
@@ -24,12 +24,19 @@ namespace MarsRover.Tests.Acceptance {
 
         [Given(@"is on a ""(.*)"" grid")]
         public void GivenIsOnAGrid(string p0) {
-            ScenarioContext.Current.Pending();
+            var expected = "100x100";
+
+            StringAssert.Contains(expected, _planetSurface.GridSize());
         }
 
-        [When(@"the rover is given the command ""(.*)""")]
-        public void WhenTheRoverIsGivenTheCommand(string p0) {
+        [When(@"the rover is given the commands ""(.*)""")]
+        public void WhenTheRoverIsGivenTheCommands(string p0) {
             _roverClient.GiveCommands(p0);
+        }
+
+        [When(@"executes the commands")]
+        public void WhenExecutesTheCommands() {
+            _roverInvoker.Execute();
         }
 
         [Then(@"the rover is at ""(.*)""\.")]

@@ -26,6 +26,10 @@ namespace MarsRover.Domain {
             _xCoordinate = MoveRoverBackwardsOnCoordinateUnlessItCanNotMoveBackwards(_xCoordinate);
         }
 
+        public string GridSize() {
+            throw new System.NotImplementedException();
+        }
+
         public void MoveYCoordinateForward() {
             _yCoordinate += 1;
         }
