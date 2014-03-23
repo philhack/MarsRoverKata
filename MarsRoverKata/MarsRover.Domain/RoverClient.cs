@@ -7,15 +7,19 @@ namespace MarsRover.Domain {
         private readonly IRover _rover;
         private readonly IRoverInvoker _roverInvoker;
 
-        public RoverClient(IRover rover, IRoverInvoker roverInvoker) {
-            _rover = rover;
+        public RoverClient(IRoverInvoker roverInvoker, IPlanetSurface planetSurface) {
             _roverInvoker = roverInvoker;
+            _rover = new Rover(planetSurface);
         }
 
         public void GiveCommands(string roverCommands) {
             var commandParser = new CommandParser(_rover);
             var commands = commandParser.ParseCommands(roverCommands);
             _roverInvoker.AddCommands(commands);
+        }
+
+        public string RoversCurrentLocation() {
+            return _rover.CurrentLocation();
         }
     }
 }

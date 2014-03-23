@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandTests.cs" />
-    <Compile Include="BDD\Given_a_rover_at_coordinates_0_0_N.cs" />
+    <Compile Include="BDD\Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoverInvokerTests.cs" />
     <Compile Include="RoverTests.cs" />

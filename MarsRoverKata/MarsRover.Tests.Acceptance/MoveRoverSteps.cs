@@ -7,34 +7,39 @@ using TechTalk.SpecFlow;
 namespace MarsRover.Tests.Acceptance {
     [Binding]
     public class MoveRoverSteps {
-        private IRover _rover;
+        private IPlanetSurface _planetSurface;
         private IRoverInvoker _roverInvoker;
         private IRoverClient _roverClient;
-        private IPlanetSurface _planetSurface;
 
         [Given(@"The rover is located at ""(.*)""")]
         public void GivenTheRoverIsLocatedAt(string p0) {
-            _planetSurface = new PlanetSurface();
-            _rover = new Rover(_planetSurface);
+            _planetSurface = new PlanetSurface(100);
             _roverInvoker = new RoverInvoker();
-            _roverClient = new RoverClient(_rover, _roverInvoker);
+            _roverClient = new RoverClient(_roverInvoker, _planetSurface);
 
-            StringAssert.Contains(p0, _rover.CurrentLocation());
+            StringAssert.Contains(p0, _roverClient.RoversCurrentLocation());
         }
 
         [Given(@"is on a ""(.*)"" grid")]
         public void GivenIsOnAGrid(string p0) {
-            ScenarioContext.Current.Pending();
+            var expected = "100x100";
+
+            StringAssert.Contains(expected, _planetSurface.GridSize());
         }
 
-        [When(@"the rover is given the command ""(.*)""")]
-        public void WhenTheRoverIsGivenTheCommand(string p0) {
+        [When(@"the rover is given the commands ""(.*)""")]
+        public void WhenTheRoverIsGivenTheCommands(string p0) {
             _roverClient.GiveCommands(p0);
+        }
+
+        [When(@"executes the commands")]
+        public void WhenExecutesTheCommands() {
+            _roverInvoker.Execute();
         }
 
         [Then(@"the rover is at ""(.*)""\.")]
         public void ThenTheRoverIsAt_(string p0) {
-            StringAssert.Contains(p0, _rover.CurrentLocation());
+            StringAssert.Contains(p0, _roverClient.RoversCurrentLocation());
         }
     }
 }

@@ -4,8 +4,10 @@ namespace MarsRover.Domain {
     public class PlanetSurface : IPlanetSurface {
         private int _xCoordinate;
         private int _yCoordinate;
+        private readonly int _gridSize;
 
-        public PlanetSurface() {
+        public PlanetSurface(int gridSize) {
+            _gridSize = gridSize;
             _xCoordinate = 0;
             _yCoordinate = 0;
         }
@@ -24,6 +26,10 @@ namespace MarsRover.Domain {
 
         public void MoveXCoordinateBackward() {
             _xCoordinate = MoveRoverBackwardsOnCoordinateUnlessItCanNotMoveBackwards(_xCoordinate);
+        }
+
+        public string GridSize() {
+            return string.Format("{0}x{1}", _gridSize, _gridSize);
         }
 
         public void MoveYCoordinateForward() {

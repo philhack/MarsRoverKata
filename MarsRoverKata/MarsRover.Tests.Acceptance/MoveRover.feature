@@ -7,5 +7,6 @@
 Scenario: Move Rover Forward, Forward, Turn Right, and Forward
 	Given The rover is located at "0,0,N"
 	And is on a "100x100" grid
-	When the rover is given the command "FFRFF"
+	When the rover is given the commands "FFRFF"
+	And executes the commands
 	Then the rover is at "2,2,E".

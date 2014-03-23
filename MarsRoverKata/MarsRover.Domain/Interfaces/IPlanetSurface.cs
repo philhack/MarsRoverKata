@@ -6,5 +6,6 @@
         int Ycoordinate { get; }
         void MoveYCoordinateBackward();
         void MoveXCoordinateBackward();
+        string GridSize();
     }
 }
