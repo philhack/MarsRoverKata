@@ -12,10 +12,12 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         protected IRover Rover;
         protected IRoverInvoker RoverInvoker;
         protected IRoverClient RoverClient;
+        private IPlanetSurface _planetSurface;
 
         [SetUp]
         public void Given() {
-            Rover = new Rover();
+            _planetSurface = new PlanetSurface();
+            Rover = new Rover(_planetSurface);
             RoverInvoker = new RoverInvoker();
             RoverClient = new RoverClient(Rover, RoverInvoker);
         }

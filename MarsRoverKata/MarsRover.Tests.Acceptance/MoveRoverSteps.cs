@@ -10,10 +10,12 @@ namespace MarsRover.Tests.Acceptance {
         private IRover _rover;
         private IRoverInvoker _roverInvoker;
         private IRoverClient _roverClient;
+        private IPlanetSurface _planetSurface;
 
         [Given(@"The rover is located at ""(.*)""")]
         public void GivenTheRoverIsLocatedAt(string p0) {
-            _rover = new Rover();
+            _planetSurface = new PlanetSurface();
+            _rover = new Rover(_planetSurface);
             _roverInvoker = new RoverInvoker();
             _roverClient = new RoverClient(_rover, _roverInvoker);
 

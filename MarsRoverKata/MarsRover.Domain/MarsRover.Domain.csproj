@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDirection.cs" />
     <Compile Include="CommandParser.cs" />
     <Compile Include="Commands\MoveBackwardCommand.cs" />
     <Compile Include="Commands\MoveForwardCommand.cs" />
@@ -50,10 +51,12 @@
     <Compile Include="Directions\West.cs" />
     <Compile Include="Interfaces\ICommandParser.cs" />
     <Compile Include="Interfaces\IDirection.cs" />
+    <Compile Include="Interfaces\IPlanetSurface.cs" />
     <Compile Include="Interfaces\IRover.cs" />
     <Compile Include="Interfaces\IRoverClient.cs" />
     <Compile Include="Interfaces\IRoverCommand.cs" />
     <Compile Include="Interfaces\IRoverInvoker.cs" />
+    <Compile Include="PlanetSurface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rover.cs" />
     <Compile Include="RoverClient.cs" />

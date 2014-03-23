@@ -5,26 +5,24 @@ using MarsRover.Domain.Interfaces;
 namespace MarsRover.Domain {
     public class Rover : IRover {
         private string _currentLocation;
-        private int _yCoordinate;
-        private int _xCoordinate;
         private IDirection _direction;
+        private IPlanetSurface _planetSurface;
 
-        public Rover() {
-            _xCoordinate = 0;
-            _yCoordinate = 0;
-            _direction = new North();
+        public Rover(IPlanetSurface planetSurface) {
+            _planetSurface = planetSurface;
+            _direction = new North(_planetSurface);
         }
 
         public string CurrentLocation() {
-            return String.Format("{0},{1},{2}", _xCoordinate, _yCoordinate, _direction.ToString());
+            return String.Format("{0},{1},{2}", _planetSurface.Xcoordinate, _planetSurface.Ycoordinate, _direction.ToString());
         }
 
         public void MoveForward() {
-            _yCoordinate += 1;
+            _direction.MoveForward();
         }
 
         public void MoveBackward() {
-            _yCoordinate = MoveRoverBackwardsUnlessItCanNotMoveBackwards();
+            _direction.MoveBackward();
         }
 
         public void TurnRight() {
@@ -33,10 +31,6 @@ namespace MarsRover.Domain {
 
         public void TurnLeft() {
             _direction = _direction.TurnLeft();
-        }
-
-        private int MoveRoverBackwardsUnlessItCanNotMoveBackwards() {
-            return _yCoordinate >= 1 ? (_yCoordinate - 1) : 0;
         }
     }
 }

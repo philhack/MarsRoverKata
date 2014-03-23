@@ -1,13 +1,24 @@
 ﻿using MarsRover.Domain.Interfaces;
 
 namespace MarsRover.Domain.Directions {
-    public class East : IDirection {
+    public class East : BaseDirection, IDirection {
+        public East(IPlanetSurface planetSurface) : base(planetSurface) {
+        }
+
         public IDirection TurnRight() {
-            return new South();
+            return new South(PlanetSurface);
         }
 
         public IDirection TurnLeft() {
-            return new North();
+            return new North(PlanetSurface);
+        }
+
+        public void MoveForward() {
+            PlanetSurface.MoveXCoordinateForward();
+        }
+
+        public void MoveBackward() {
+            throw new System.NotImplementedException();
         }
 
         public override string ToString() {

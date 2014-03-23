@@ -12,7 +12,8 @@ namespace MarsRover.Tests.Unit {
     public class RoverTests {
         [Test]
         public void Rover_implements_the_interface_IRover() {
-            var rover = new Rover();
+            var plannetSurface = new PlanetSurface();
+            var rover = new Rover(plannetSurface);
 
             Assert.IsInstanceOf<IRover>(rover);
         }
