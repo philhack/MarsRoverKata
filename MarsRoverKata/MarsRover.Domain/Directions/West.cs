@@ -8,7 +8,7 @@ namespace MarsRover.Domain.Directions {
         }
 
         public IDirection TurnLeft() {
-            throw new NotImplementedException();
+            return new South();
         }
 
         public override string ToString() {
