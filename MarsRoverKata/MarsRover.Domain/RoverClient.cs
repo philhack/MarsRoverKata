@@ -19,7 +19,7 @@ namespace MarsRover.Domain {
         }
 
         public string RoversCurrentLocation() {
-            throw new System.NotImplementedException();
+            return _rover.CurrentLocation();
         }
     }
 }
