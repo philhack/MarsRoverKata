@@ -5,5 +5,6 @@
         int Xcoordinate { get; }
         int Ycoordinate { get; }
         void MoveYCoordinateBackward();
+        void MoveXCoordinateBackward();
     }
 }

@@ -19,7 +19,11 @@ namespace MarsRover.Domain {
         }
 
         public void MoveYCoordinateBackward() {
-            MoveRoverBackwardsUnlessItCanNotMoveBackwards();
+            _yCoordinate = MoveRoverBackwardsOnCoordinateUnlessItCanNotMoveBackwards(_yCoordinate);
+        }
+
+        public void MoveXCoordinateBackward() {
+            _xCoordinate = MoveRoverBackwardsOnCoordinateUnlessItCanNotMoveBackwards(_xCoordinate);
         }
 
         public void MoveYCoordinateForward() {
@@ -30,8 +34,8 @@ namespace MarsRover.Domain {
             _xCoordinate += 1;
         }
 
-        private int MoveRoverBackwardsUnlessItCanNotMoveBackwards() {
-            return _yCoordinate >= 1 ? (_yCoordinate -= 1) : 0;
+        private int MoveRoverBackwardsOnCoordinateUnlessItCanNotMoveBackwards(int currentCoodinateValue) {
+            return currentCoodinateValue >= 1 ? (currentCoodinateValue - 1) : 0;
         }
     }
 }
