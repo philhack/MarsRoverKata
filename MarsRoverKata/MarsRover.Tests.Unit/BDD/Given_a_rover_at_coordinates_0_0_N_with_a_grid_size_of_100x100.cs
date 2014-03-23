@@ -7,8 +7,8 @@ using MarsRover.Domain.Commands;
 using MarsRover.Domain.Interfaces;
 using NUnit.Framework;
 
-namespace Given_a_rover_at_coordinates_0_0_N {
-    public class Given_a_rover_at_coordinates_0_0_N {
+namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
+    public class Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         protected IRover Rover;
         protected IRoverInvoker RoverInvoker;
         protected IRoverClient RoverClient;
@@ -23,7 +23,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_no_command_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_no_command_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [Test]
         public void Then_the_robots_position_is_at_0_0_N() {
             var expected = "0,0,N";
@@ -32,7 +32,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_an_empty_command_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_an_empty_command_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("");
@@ -46,7 +46,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_F_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_F_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("F");
@@ -62,7 +62,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
     }
 
 
-    public class When_the_commands_FF_are_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_commands_FF_are_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("FF");
@@ -77,7 +77,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_B_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_B_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("B");
@@ -92,7 +92,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_commands_BB_are_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_commands_BB_are_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("BB");
@@ -107,7 +107,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_commands_FFB_are_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_commands_FFB_are_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("FFB");
@@ -121,7 +121,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_R_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_R_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("R");
@@ -136,7 +136,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_L_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_L_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("L");
@@ -151,7 +151,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RR_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RR_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RR");
@@ -166,7 +166,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RRR_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RRR_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RRR");
@@ -181,7 +181,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RRRR_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RRRR_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RRRR");
@@ -196,7 +196,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_LL_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_LL_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("LL");
@@ -211,7 +211,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_LLL_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_LLL_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("LLL");
@@ -226,7 +226,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_LLLL_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_LLLL_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("LLLL");
@@ -241,7 +241,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RF_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RF_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RF");
@@ -256,7 +256,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RB_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RB_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RB");
@@ -271,7 +271,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RFFB_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RFFB_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RFFB");
@@ -286,7 +286,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_FFRRF_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_FFRRF_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("FFRRF");
@@ -301,7 +301,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RRB_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RRB_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RRB");
@@ -316,7 +316,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_RRF_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_RRF_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("RRF");
@@ -331,7 +331,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_LB_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_LB_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("LB");
@@ -346,7 +346,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_LF_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_LF_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("LF");
@@ -361,7 +361,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_LBBF_is_given : Given_a_rover_at_coordinates_0_0_N {
+    public class When_the_command_LBBF_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("LBBF");
