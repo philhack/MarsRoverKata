@@ -360,4 +360,19 @@ namespace Given_a_rover_at_coordinates_0_0_N {
             Assert.AreEqual(expected, Rover.CurrentLocation());
         }
     }
+
+    public class When_the_command_LBBF_is_given : Given_a_rover_at_coordinates_0_0_N {
+        [SetUp]
+        public void When() {
+            RoverClient.GiveCommands("LBBF");
+            RoverInvoker.Execute();
+        }
+
+        [Test]
+        public void Then_the_rover_current_location_is_1_0_W() {
+            var expected = "1,0,W";
+
+            Assert.AreEqual(expected, Rover.CurrentLocation());
+        }
+    }
 }
