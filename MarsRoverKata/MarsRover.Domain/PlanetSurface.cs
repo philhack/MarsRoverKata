@@ -4,8 +4,10 @@ namespace MarsRover.Domain {
     public class PlanetSurface : IPlanetSurface {
         private int _xCoordinate;
         private int _yCoordinate;
+        private int _gridSize;
 
-        public PlanetSurface() {
+        public PlanetSurface(int gridSize) {
+            _gridSize = gridSize;
             _xCoordinate = 0;
             _yCoordinate = 0;
         }

@@ -12,11 +12,11 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         protected IRover Rover;
         protected IRoverInvoker RoverInvoker;
         protected IRoverClient RoverClient;
-        private IPlanetSurface _planetSurface;
+        protected IPlanetSurface _planetSurface;
 
         [SetUp]
         public void Given() {
-            _planetSurface = new PlanetSurface();
+            _planetSurface = new PlanetSurface(100);
             Rover = new Rover(_planetSurface);
             RoverInvoker = new RoverInvoker();
             RoverClient = new RoverClient(Rover, RoverInvoker);
@@ -29,6 +29,12 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
             var expected = "0,0,N";
 
             Assert.AreEqual(expected, Rover.CurrentLocation());
+        }
+
+        [Test]
+        public void Then_the_grid_size_is_100x100() {
+            var expected = "100x100";
+            StringAssert.Contains(expected, _planetSurface.GridSize());
         }
     }
 

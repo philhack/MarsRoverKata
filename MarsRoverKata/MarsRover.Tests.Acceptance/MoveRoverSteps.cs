@@ -14,7 +14,7 @@ namespace MarsRover.Tests.Acceptance {
 
         [Given(@"The rover is located at ""(.*)""")]
         public void GivenTheRoverIsLocatedAt(string p0) {
-            _planetSurface = new PlanetSurface();
+            _planetSurface = new PlanetSurface(100);
             _rover = new Rover(_planetSurface);
             _roverInvoker = new RoverInvoker();
             _roverClient = new RoverClient(_rover, _roverInvoker);
