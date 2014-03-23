@@ -119,7 +119,7 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         }
     }
 
-    public class When_the_command_R_is_given : Given_a_rover_at_coordinates_0_0_N{
+    public class When_the_command_R_is_given : Given_a_rover_at_coordinates_0_0_N {
         [SetUp]
         public void When() {
             RoverClient.GiveCommands("R");
@@ -129,6 +129,21 @@ namespace Given_a_rover_at_coordinates_0_0_N {
         [Test]
         public void Then_the_rover_current_location_is_0_0_E() {
             var expected = "0,0,E";
+
+            Assert.AreEqual(expected, Rover.CurrentLocation());
+        }
+    }
+
+    public class When_the_command_L_is_given : Given_a_rover_at_coordinates_0_0_N {
+        [SetUp]
+        public void When() {
+            RoverClient.GiveCommands("L");
+            RoverInvoker.Execute();
+        }
+
+        [Test]
+        public void Then_the_rover_current_location_is_0_0_W() {
+            var expected = "0,0,W";
 
             Assert.AreEqual(expected, Rover.CurrentLocation());
         }
