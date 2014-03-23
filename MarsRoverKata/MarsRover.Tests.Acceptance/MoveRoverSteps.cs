@@ -19,7 +19,7 @@ namespace MarsRover.Tests.Acceptance {
             _roverInvoker = new RoverInvoker();
             _roverClient = new RoverClient(_rover, _roverInvoker);
 
-            StringAssert.Contains(p0, _rover.CurrentLocation());
+            StringAssert.Contains(p0, _roverClient.RoversCurrentLocation());
         }
 
         [Given(@"is on a ""(.*)"" grid")]
@@ -41,7 +41,7 @@ namespace MarsRover.Tests.Acceptance {
 
         [Then(@"the rover is at ""(.*)""\.")]
         public void ThenTheRoverIsAt_(string p0) {
-            StringAssert.Contains(p0, _rover.CurrentLocation());
+            StringAssert.Contains(p0, _roverClient.RoversCurrentLocation());
         }
     }
 }

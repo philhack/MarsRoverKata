@@ -21,6 +21,10 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
             RoverInvoker = new RoverInvoker();
             RoverClient = new RoverClient(Rover, RoverInvoker);
         }
+
+        protected void AssertThatTheRoverIsAtTheExpectedLocation(string expected) {
+            Assert.AreEqual(expected, RoverClient.RoversCurrentLocation());
+        }
     }
 
     public class When_no_command_is_given : Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
@@ -28,12 +32,13 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_robots_position_is_at_0_0_N() {
             var expected = "0,0,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
 
         [Test]
         public void Then_the_grid_size_is_100x100() {
             var expected = "100x100";
+
             StringAssert.Contains(expected, PlanetSurface.GridSize());
         }
     }
@@ -48,7 +53,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_robots_position_is_at_0_0_N() {
             var expected = "0,0,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -63,7 +68,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rovers_current_location_is_now_at_0_1_N() {
             var expected = "0,1,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -79,7 +84,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rovers_current_location_is_now_at_0_2_N() {
             var expected = "0,2,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -94,7 +99,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rovers_current_location_is_now_at_0_0_N() {
             var expected = "0,0,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -109,7 +114,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rovers_current_location_is_now_at_0_0_N() {
             var expected = "0,0,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -123,7 +128,8 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [Test]
         public void Then_the_rovers_current_location_is_now_at_0_1_N() {
             var expected = "0,1,N";
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -138,7 +144,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_E() {
             var expected = "0,0,E";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -153,7 +159,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_W() {
             var expected = "0,0,W";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -168,7 +174,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_S() {
             var expected = "0,0,S";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -183,7 +189,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_W() {
             var expected = "0,0,W";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -198,7 +204,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_N() {
             var expected = "0,0,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -213,7 +219,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_S() {
             var expected = "0,0,S";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -228,7 +234,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_E() {
             var expected = "0,0,E";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -243,7 +249,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_N() {
             var expected = "0,0,N";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -258,7 +264,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_1_0_E() {
             var expected = "1,0,E";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -273,7 +279,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_E() {
             var expected = "0,0,E";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -288,7 +294,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_E() {
             var expected = "1,0,E";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -303,7 +309,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_1_S() {
             var expected = "0,1,S";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -318,7 +324,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_1_S() {
             var expected = "0,1,S";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -333,7 +339,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_S() {
             var expected = "0,0,S";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -348,7 +354,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_1_0_W() {
             var expected = "1,0,W";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -363,7 +369,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_0_0_W() {
             var expected = "0,0,W";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 
@@ -378,7 +384,7 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         public void Then_the_rover_current_location_is_1_0_W() {
             var expected = "1,0,W";
 
-            Assert.AreEqual(expected, Rover.CurrentLocation());
+            AssertThatTheRoverIsAtTheExpectedLocation(expected);
         }
     }
 }

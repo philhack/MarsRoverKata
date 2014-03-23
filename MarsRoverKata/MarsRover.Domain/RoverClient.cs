@@ -17,5 +17,9 @@ namespace MarsRover.Domain {
             var commands = commandParser.ParseCommands(roverCommands);
             _roverInvoker.AddCommands(commands);
         }
+
+        public string RoversCurrentLocation() {
+            throw new System.NotImplementedException();
+        }
     }
 }
