@@ -8,8 +8,8 @@ namespace MarsRover.Tests.Acceptance {
     [Binding]
     public class MoveRoverSteps {
         private IRover _rover;
-        IRoverInvoker _roverInvoker;
-        IRoverClient _roverClient;
+        private IRoverInvoker _roverInvoker;
+        private IRoverClient _roverClient;
 
         [Given(@"The rover is located at ""(.*)""")]
         public void GivenTheRoverIsLocatedAt(string p0) {

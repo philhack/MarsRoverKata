@@ -4,7 +4,7 @@
 	In order to accomplish my mission
 
 @MoveRover
-Scenario: Move Rover Forward, Forward, Reverse, and Forward
+Scenario: Move Rover Forward, Forward, Turn Right, and Forward
 	Given The rover is located at "0,0,N"
 	And is on a "100x100" grid
 	When the rover is given the command "FFRFF"
