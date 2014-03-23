@@ -7,9 +7,9 @@ namespace MarsRover.Domain {
         private readonly IRover _rover;
         private readonly IRoverInvoker _roverInvoker;
 
-        public RoverClient(IRover rover, IRoverInvoker roverInvoker) {
-            _rover = rover;
+        public RoverClient(IRoverInvoker roverInvoker, IPlanetSurface planetSurface) {
             _roverInvoker = roverInvoker;
+            _rover = new Rover(planetSurface);
         }
 
         public void GiveCommands(string roverCommands) {

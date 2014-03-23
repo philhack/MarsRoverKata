@@ -9,7 +9,6 @@ using NUnit.Framework;
 
 namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
     public class Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
-        protected IRover Rover;
         protected IRoverInvoker RoverInvoker;
         protected IRoverClient RoverClient;
         protected IPlanetSurface PlanetSurface;
@@ -17,9 +16,8 @@ namespace Given_a_rover_at_coordinates_0_0_N_with_a_grid_size_of_100x100 {
         [SetUp]
         public void Given() {
             PlanetSurface = new PlanetSurface(100);
-            Rover = new Rover(PlanetSurface);
             RoverInvoker = new RoverInvoker();
-            RoverClient = new RoverClient(Rover, RoverInvoker);
+            RoverClient = new RoverClient(RoverInvoker, PlanetSurface);
         }
 
         protected void AssertThatTheRoverIsAtTheExpectedLocation(string expected) {

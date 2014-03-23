@@ -8,16 +8,14 @@ namespace MarsRover.Tests.Acceptance {
     [Binding]
     public class MoveRoverSteps {
         private IPlanetSurface _planetSurface;
-        private IRover _rover;
         private IRoverInvoker _roverInvoker;
         private IRoverClient _roverClient;
 
         [Given(@"The rover is located at ""(.*)""")]
         public void GivenTheRoverIsLocatedAt(string p0) {
             _planetSurface = new PlanetSurface(100);
-            _rover = new Rover(_planetSurface);
             _roverInvoker = new RoverInvoker();
-            _roverClient = new RoverClient(_rover, _roverInvoker);
+            _roverClient = new RoverClient(_roverInvoker, _planetSurface);
 
             StringAssert.Contains(p0, _roverClient.RoversCurrentLocation());
         }
