@@ -42,6 +42,7 @@
     <Compile Include="CommandParser.cs" />
     <Compile Include="Commands\MoveBackwardCommand.cs" />
     <Compile Include="Commands\MoveForwardCommand.cs" />
+    <Compile Include="Commands\TurnLeftCommand.cs" />
     <Compile Include="Commands\TurnRightCommand.cs" />
     <Compile Include="Interfaces\ICommandParser.cs" />
     <Compile Include="Interfaces\IRover.cs" />

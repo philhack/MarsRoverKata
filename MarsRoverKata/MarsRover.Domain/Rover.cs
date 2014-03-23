@@ -30,6 +30,10 @@ namespace MarsRover.Domain {
             _direction = "E";
         }
 
+        public void TurnLeft() {
+            _direction = "W";
+        }
+
         private int MoveRoverBackwardsUnlessItCanNotMoveBackwards() {
             return _yCoordinate >= 1 ? (_yCoordinate - 1) : 0;
         }
